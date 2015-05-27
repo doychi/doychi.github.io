@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Usage Instruction"
+title:  "Usage Instruction for Bitwiser"
 date:   2014-09-10 20:45:35
 categories: 
 ---
 
-## Getting Started
+## Getting Started with Bitwiser
 
 (Assuming you know what Jekyll and Github pages are.)
 
