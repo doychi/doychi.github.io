@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Converting from Hyper-V to VirutalBox"
-date:   2014-09-10 20:45:35
+date:   2014-11-20 21:19:01
 categories: virtual, server
 ---
 # Converting from Hyper-v to VirutalBox
