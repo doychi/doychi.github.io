@@ -21,6 +21,11 @@ able to share VMs with and Hyper-V won't run on a Mac (obviously).
 [windev]: http://ardamis.com/2012/08/21/getting-a-list-of-logical-and-physical-drives-from-the-command-line/ "List hard drive device IDs in Windows."
 [service]: http://www.windows-noob.com/forums/index.php?/topic/4931-have-virtualbox-vms-start-as-a-service-on-a-windows-host/ "VmServiceControl"
 
+1. [Enable/Disable Hyper-v] [hyperv]
+1. [VirtualBox Raw Devices and Windows] [vboxraw]
+1. [List hard drive device IDs in Windows] [windev]
+1. [Virtual Box Servcies Management] [services]
+
 
 # Tasks
 
