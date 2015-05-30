@@ -32,3 +32,6 @@ Roughly this consists of:
 1. Setting up Jekyll
 1. Making any changes specific to Windows
 1. Setting up your GitHub pages.
+
+
+
