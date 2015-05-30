@@ -24,7 +24,7 @@ able to share VMs with and Hyper-V won't run on a Mac (obviously).
 1. [Enable/Disable Hyper-v] [hyperv]
 1. [VirtualBox Raw Devices and Windows] [vboxraw]
 1. [List hard drive device IDs in Windows] [windev]
-1. [Virtual Box Servcies Management] [services]
+1. [Virtual Box Servcies Management] [service]
 
 
 # Tasks
@@ -39,6 +39,6 @@ able to share VMs with and Hyper-V won't run on a Mac (obviously).
 **NB:**  I after step 3 I though that Hyper-V may have been causing issues accessing the raw disks.  This wasn't the case, but to test I did uninstall Hyper-V.
 
 ## Starting VirtualBox Guests on Boot
-The [VmServiceControl] [service] software doesn’t seem to work very well but it
-does work.  I’ll have to see if I can find a wrapper for creating services that
+The [VmServiceControl] [service] software doesn't seem to work very well but it
+does work.  I'll have to see if I can find a wrapper for creating services that
 I can place around the VirutalBox command line tools.
