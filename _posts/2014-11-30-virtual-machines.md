@@ -4,8 +4,7 @@ title:  "Converting from Hyper-V to VirutalBox"
 date:   2014-11-20 21:19:01
 categories: virtual, server
 ---
-# Converting from Hyper-v to VirutalBox
-
+## Overview
 This article has been transfered from my other notes.
 
 I have been using Hyper-V under Windows 8 Pro to run my virutal machines (VMs).
@@ -14,7 +13,7 @@ started when the PC starts.  Unfortunately I also have a Mac that I want to be
 able to share VMs with and Hyper-V won't run on a Mac (obviously).
 
 
-# References
+## References
 
 [hyperv]: http://www.hanselman.com/blog/SwitchEasilyBetweenVirtualBoxAndHyperVWithABCDEditBootEntryInWindows81.aspx "How to create a start menu which enables/disables Hyper-v" 
 [vboxraw]: http://agnipulse.com/2009/07/boot-your-usb-drive-in-virtualbox/ "Create a raw device mapping for VirtualBox in Windows."
@@ -27,7 +26,7 @@ able to share VMs with and Hyper-V won't run on a Mac (obviously).
 1. [Virtual Box Servcies Management] [service]
 
 
-# Tasks
+## Tasks
 
 1. Install VirutalBox
 1. Configure the Windows boot process, as per [1].
@@ -38,7 +37,7 @@ able to share VMs with and Hyper-V won't run on a Mac (obviously).
 
 **NB:**  I after step 3 I though that Hyper-V may have been causing issues accessing the raw disks.  This wasn't the case, but to test I did uninstall Hyper-V.
 
-## Starting VirtualBox Guests on Boot
+### Starting VirtualBox Guests on Boot
 The [VmServiceControl] [service] software doesn't seem to work very well but it
 does work.  I'll have to see if I can find a wrapper for creating services that
 I can place around the VirutalBox command line tools.
