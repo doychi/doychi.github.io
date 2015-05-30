@@ -27,11 +27,9 @@ may way through the issue with UTF-8 and Bundler :( the instructions get you
 up and running.
 
 Roughly this consists of:
+
 1. Setting up Ruby
 1. Setting up Ruby DevKit
 1. Setting up Jekyll
 1. Making any changes specific to Windows
 1. Setting up your GitHub pages.
-
-
-
