@@ -24,7 +24,7 @@ able to share VMs with and Hyper-V won't run on a Mac (obviously).
 1. [Enable/Disable Hyper-v] [hyperv]
 1. [VirtualBox Raw Devices and Windows] [vboxraw]
 1. [List hard drive device IDs in Windows] [windev]
-1. [Virtual Box Servcies Management] [services]
+1. [Virtual Box Servcies Management] [service]
 
 
 # Tasks

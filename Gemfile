@@ -1,4 +1,4 @@
-# A sample Gemfile
+# Base Gemfile for GitHub Pages Jekyll
 source "https://rubygems.org"
 
 require 'json'
@@ -7,3 +7,5 @@ versions = JSON.parse(open('https://pages.github.com/versions.json').read);
 
 # gem "rails"
 gem "github-pages", versions['github-pages']
+
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
