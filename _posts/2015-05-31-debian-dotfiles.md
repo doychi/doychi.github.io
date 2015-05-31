@@ -29,8 +29,9 @@ After doing some reading I decided to use [dots][dots].
 The tasks for using Dots are covered by the [readme][doychi-tmpl] file in my dots repo, but essentially is:
 
 1. `aptitude install xdg-user-dirs dg-utils`
-1. Clone the repo.
-1. Initialise the local environment.
-1. Set the groups to apply for the machine.
-1. Install the configuration for the machine.
-1. Configure the machine for [XDG][xdg].
+1. Follow the [readme][doychi-tmpl]
+    1. Clone the repo.
+    1. Initialise the local environment.
+    1. Set the groups to apply for the machine.
+    1. Install the configuration for the machine.
+    1. Configure the machine for [XDG][xdg].
