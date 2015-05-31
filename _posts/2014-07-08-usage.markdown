@@ -2,7 +2,7 @@
 layout: post
 title:  "Usage Instruction for Bitwiser"
 date:   2014-09-10 20:45:35
-categories: jekyll, template
+categories: jekyll template
 ---
 
 ## Getting Started with Bitwiser

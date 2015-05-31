@@ -2,7 +2,7 @@
 layout: post
 title:  "Managing Debian Dotfiles"
 date:   2015-05-31 12:55:25
-categories: debian, dot files, managing
+categories: debian dot files managing
 ---
 
 ## Overview
@@ -11,7 +11,8 @@ this is more of an issues cross my virutal machines from my desktop to my
 tablet.  When setting up my development environment this time round I
 remembered seeing something about managing dot files so I went exploring.
 
-After doing some reading I decided to use [dots][dots].
+After doing some reading I decided to use [dots][dots].  This entry covers how
+to abt all my dots files.
 
 ## References
 [dots]: https://github.com/EvanPurkhiser/dots "Dots"

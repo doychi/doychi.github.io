@@ -2,7 +2,7 @@
 layout: post
 title:  "Setting Up GitHub Pages and Jekyll on Windows"
 date:   2015-05-30 21:41
-categories: github, jekyll, blog
+categories: github jekyll blog
 ---
 
 ## Overview

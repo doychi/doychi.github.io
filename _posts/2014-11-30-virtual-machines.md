@@ -2,7 +2,7 @@
 layout: post
 title:  "Converting from Hyper-V to VirutalBox"
 date:   2014-11-20 21:19:01
-categories: virtual, server
+categories: virtual server
 ---
 ## Overview
 This article has been transfered from my other notes.
