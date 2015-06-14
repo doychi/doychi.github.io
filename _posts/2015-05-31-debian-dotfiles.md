@@ -11,7 +11,7 @@ tablet.  When setting up my development environment this time round I
 remembered seeing something about managing dot files so I went exploring.
 
 After doing some reading I decided to use [dots][dots].  This entry covers how
-to abt all my dots files.
+to set up all my dots files.
 
 ## References
 [dots]: https://github.com/EvanPurkhiser/dots "Dots"
