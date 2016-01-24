@@ -14,7 +14,12 @@ layout: default
 			{% else %}
 				<a class="sharer twitter" href="#" target="_blank" onclick="window.open('https://twitter.com/share?url='+window.location.href,'_blank','height=300,width=600');return false;"><i class="fa fa-twitter"></i></a>
 			{% endif %}
-		</p>
+        {% if page.updated %}
+        <br>Updated:
+        <time datetime="{{page.updated | date: "%Y-%m-%d" }}">{{ page.updated | date: "%B %-d, %Y" }}</time>
+        {% endif %}
+	</p>
+
 	</header>
 	<section>
 		{% if page.tags and page.tags.size > 0 %}
