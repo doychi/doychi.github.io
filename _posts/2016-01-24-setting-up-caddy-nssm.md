@@ -7,9 +7,11 @@ categories: web server windows service blog
 
 ## Overview
 I have a private diary that I want to write in [markdown][md].  The problem is
-I haven't found any good way to do so and read it in HTML quickly and easily,
-so I set out to set up something simple.  This, for now has ended up using the
-Go language web server [Caddy][caddy] and [MDWiki][mdwiki].
+I haven't found any good way to do so under Windows and read it in HTML quickly
+and easily, so I set out to set up something simple.
+
+This, for now has ended up using the Go language web server [Caddy][caddy] and
+[MDWiki][mdwiki].
 
 ## References 
 [md]: https://daringfireball.net/projects/markdown "Markdown"
