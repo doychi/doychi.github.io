@@ -4,7 +4,7 @@ title:  "Managing Debian Dotfiles"
 date:   2015-05-31 12:55:25
 categories: debian dot files managing
 ---
-## Overview
+
 Managing dot files has long been a problem across multiple machines.  For me
 this is more of an issues cross my virutal machines from my desktop to my
 tablet.  When setting up my development environment this time round I

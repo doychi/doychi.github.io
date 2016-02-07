@@ -5,7 +5,6 @@ date:   2015-05-30 21:41
 categories: github jekyll blog
 ---
 
-## Overview
 In this article I setup a Windows environment to run [Jekyll][jek] to
 support a [GitHub Pages][pages] environment.
 

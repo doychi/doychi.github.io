@@ -1,9 +1,11 @@
 ---
 layout: post
-title:  "Usage Instruction for Bitwiser"
+title:  "Usage Instruction for Bitwiser Jekyell Templates"
 date:   2014-09-10 20:45:35
 categories: jekyll template
 ---
+
+[GitHub Pages](https://pages.github.com) have the capability to be themed.  This is my notes on configuring the Bitwiser theme for GitHub Pages.
 
 ## Getting Started with Bitwiser
 

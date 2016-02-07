@@ -4,7 +4,7 @@ title:  "Converting from Hyper-V to VirutalBox"
 date:   2014-11-20 21:19:01
 categories: virtual server
 ---
-## Overview
+
 This article has been transfered from my other notes.
 
 I have been using Hyper-V under Windows 8 Pro to run my virutal machines (VMs).
