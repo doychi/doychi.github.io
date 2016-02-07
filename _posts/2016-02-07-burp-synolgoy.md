@@ -2,6 +2,7 @@
 layout: post
 title:  "Burp Backup Configuration for Synology Diskstation"
 date:   2016-02-07 12:20:43
+timezone: Australia/ACT
 categories: backup synology burp
 ---
 
@@ -67,3 +68,4 @@ The build environment for Burp is pretty standard and can be installed with the 
 > apt-get install librsync-dev libz-dev libssl-dev uthash-dev libncurses5-dev make g++
 
 **Incomplete Build, Install and Config of Burp still needs to be done**
+
