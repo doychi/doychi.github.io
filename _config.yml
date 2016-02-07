@@ -3,7 +3,7 @@ name: Doychi's Documentation
 ##Markdown processor
 markdown: kramdown
 ##syntax highlighter. change it to pygments
-highlighter: rogue
+highlighter: rouge
 
 ##define base_url for valid usage in sitemap.xml and robots.txt
 base_url: https://doychi.github.io
