@@ -16,6 +16,8 @@ paginate_path: "page:num"
 description: This site is primarily intended for me, Doychi, as a store of the configuration of the tools I use in my enviornment.  I have published these documents in the hope that someone else finds them useful.
 ##Some frequently used keywords on your website
 keywords: documentation, how to, tutorial
+#Set the timezone to Canberra
+timezone: Australia/ACT
 
 ##define this for disqus comment support
 #disqus: forumname
