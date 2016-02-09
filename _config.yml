@@ -45,3 +45,4 @@ gems:
     - jemoji
     - jekyll-feed
     - jekyll-paginate
+    - jekyll-mentions
