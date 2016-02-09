@@ -2,7 +2,6 @@
 layout: post
 title:  "Burp Backup Configuration for Synology Diskstation"
 date:   2016-02-07 12:20:43
-timezone: Australia/ACT
 categories: backup synology burp
 ---
 
@@ -65,7 +64,16 @@ Once installed, the [SynoCommunity Debian] packages instructions should be follo
 
 The build environment for Burp is pretty standard and can be installed with the command:
 
-> apt-get install librsync-dev libz-dev libssl-dev uthash-dev libncurses5-dev make g++
+> apt-get install librsync-dev libz-dev libssl-dev uthash-dev libyajl-dev libncurses5-dev librsync1
+make g++ dh-make fakeroot dh-autoreconf
 
-**Incomplete Build, Install and Config of Burp still needs to be done**
+- dh-make - This package is for building a Burp Debian package
+- dh-autoreconf - This package is also for building a Burp Debian package
+- fakeroot - This package is the thrid for building a Burp Debian package
+- All of the other packages are dependencies for Burp
 
+Follow the dh-make instructions in [How To Build a Package from Source the Smart Way](http://forums.debian.net/viewtopic.php?t=38976).
+
+1. ``wget http://download.sourceforge.net/project/burp/burp-1.4.40/burp-1.4.40.tar.bz2``
+1. Extract the file into a directory, as per the link above.
+1. 
