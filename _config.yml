@@ -41,8 +41,8 @@ encoding: utf8
 
 #Gems to use
 gems:
-    - jekyll-sitemap
     - jemoji
     - jekyll-feed
     - jekyll-paginate
     - jekyll-mentions
+    - jekyll-sitemap
