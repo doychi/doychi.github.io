@@ -67,8 +67,9 @@ Once installed, the [SynoCommunity Debian] packages instructions should be follo
 
 The build environment for Burp is pretty standard and can be installed with the command:
 
-> apt-get install librsync-dev libz-dev libssl-dev uthash-dev libyajl-dev libncurses5-dev librsync1
-make g++ dh-make fakeroot dh-autoreconf libtinfo-dev libattr1-dev libacl1-dev
+    apt-get install librsync-dev libz-dev libssl-dev uthash-dev \
+    libyajl-dev libncurses5-dev librsync1 make g++ dh-make fakeroot \
+    dh-autoreconf libtinfo-dev libattr1-dev libacl1-dev
 
 - dh-make - This package is for building a Burp Debian package
 - dh-autoreconf - This package is also for building a Burp Debian package
