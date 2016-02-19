@@ -77,5 +77,6 @@ Follow the dh-make instructions in [How To Build a Package from Source the Smart
 
 1. ``wget http://download.sourceforge.net/project/burp/burp-1.4.40/burp-1.4.40.tar.bz2``
 1. Extract the file into a directory, as per the link above.
+1. Rename the source file ``mv burp-1.4.40.tar.bz2 burp-1.4.40.orig.tar.bz2``
 1. Delete the format file:  ``rm debian/source/format``
 1. Run the Debian build: ``dpkg-buildpakcage -sa -j3 -us -uc``
