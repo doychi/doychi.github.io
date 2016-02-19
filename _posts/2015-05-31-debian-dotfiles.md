@@ -28,7 +28,7 @@ to set up all my dots files.
 
 The tasks for using Dots are covered by the [readme][doychi-tmpl] file in my dots repo, but essentially is:
 
-1. `aptitude install xdg-user-dirs dg-utils`
+1. `aptitude install xdg-user-dirs xdg-utils`
 1. Follow the [readme][doychi-tmpl]
     1. Clone the repo.
     1. Initialise the local environment.
