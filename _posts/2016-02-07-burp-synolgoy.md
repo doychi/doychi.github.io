@@ -60,12 +60,12 @@ Once installed, the [SynoCommunity Debian] packages instructions should be follo
 1. Set up the Debian Chroot environment as a service, by going to ``Menu -> Control Panel -> Info Center -> Services``.
 1. Find "Debian Chroot" in the list of services and check the "Enable" check box and click "Save".
 
-### Install Build Tools (to Compile and Install Burp). **Incomplete**
+### Install Build Tools (to Compile and Install Burp)
 
 The build environment for Burp is pretty standard and can be installed with the command:
 
 > apt-get install librsync-dev libz-dev libssl-dev uthash-dev libyajl-dev libncurses5-dev librsync1
-make g++ dh-make fakeroot dh-autoreconf
+make g++ dh-make fakeroot dh-autoreconf libtinfo-dev libattr1-dev libacl1-dev
 
 - dh-make - This package is for building a Burp Debian package
 - dh-autoreconf - This package is also for building a Burp Debian package
@@ -76,5 +76,9 @@ Follow the dh-make instructions in [How To Build a Package from Source the Smart
 
 1. ``wget http://download.sourceforge.net/project/burp/burp-1.4.40/burp-1.4.40.tar.bz2``
 1. Extract the file into a directory, as per the link above.
+1. Delete the format file:  ``rm debian/source/format``
+1. Run the Debian build: ``dpkg-buildpakcage -sa -j3 -us -uc``
 
-** Incomplete.  These instructions/notes will be updated as soon as I get time **
+**Incomplete.  These instructions/notes will be updated as soon as I get time**
+
+Further development of this post needs investigation of the ``git-buildpackage`` tool.
