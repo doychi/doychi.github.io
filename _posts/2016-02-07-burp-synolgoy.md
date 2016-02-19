@@ -6,6 +6,8 @@ categories: backup synology burp
 ---
 **Updated 19 Feb 2016 - Resolved compilation issues**
 
+**Updated 20 Feb 2016 - Added the step to update the ``changelog`` file**
+
 I've had Burp setup before in my home environment.  I found it to be pretty effective, but now I have a [Synology NAS][syno] and want to move the backups to this device.  In this entry I will be configuring [Burp][burp] on a Synology DS414, using the [SynoCommunity][comm] [Debian][synodeb] environment.
 
 ## References 
@@ -79,4 +81,5 @@ Follow the dh-make instructions in [How To Build a Package from Source the Smart
 1. Extract the file into a directory, as per the link above.
 1. Rename the source file ``mv burp-1.4.40.tar.bz2 burp-1.4.40.orig.tar.bz2``
 1. Delete the format file:  ``rm debian/source/format``
+1. Update the Debian change log ``debian/changelog``.  I just search for examples online.  One day I will write a script extract the log from the Burp change log.
 1. Run the Debian build: ``dpkg-buildpakcage -sa -j3 -us -uc``
