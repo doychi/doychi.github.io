@@ -4,11 +4,11 @@ title:  "Burp Backup Configuration for Synology Diskstation"
 date:   2016-02-07 12:20:43
 categories: backup synology burp
 ---
+I've had Burp setup before in my home environment.  I found it to be pretty effective, but now I have a [Synology NAS][syno] and want to move the backups to this device.  In this entry I will be configuring [Burp][burp] on a Synology DS414, using the [SynoCommunity][comm] [Debian][synodeb] environment.
+
 **Updated 19 Feb 2016 - Resolved compilation issues**
 
 **Updated 20 Feb 2016 - Added the step to update the ``changelog`` file**
-
-I've had Burp setup before in my home environment.  I found it to be pretty effective, but now I have a [Synology NAS][syno] and want to move the backups to this device.  In this entry I will be configuring [Burp][burp] on a Synology DS414, using the [SynoCommunity][comm] [Debian][synodeb] environment.
 
 ## References 
 [burp]: https://burp.grke.org/ "Burp Backup"
