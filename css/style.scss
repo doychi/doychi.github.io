@@ -348,6 +348,18 @@ article{
 .meta{
 	font-size: 0.8em;
 	font-weight: bold;
+    dt.title {
+        
+    }
+    dt.update {
+        font-size: smaller;
+        color: grey;
+    }
+    dd.update {
+        font-size: smaller;
+        font-weight: normal;
+        color: grey;
+    }
 }
 
 .site-footer{

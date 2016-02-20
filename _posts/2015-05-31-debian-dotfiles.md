@@ -2,6 +2,8 @@
 layout: post
 title:  "Managing Debian Dotfiles"
 date:   2015-05-31 12:55:25
+updates:
+    - 2016-03-19 22:20:    Fixed a typo in the xdg-utils package
 categories: debian dot files managing
 ---
 

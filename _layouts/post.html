@@ -18,6 +18,16 @@ layout: default
         <br>Updated:
         <time datetime="{{page.updated | date: "%Y-%m-%d" }}">{{ page.updated | date: "%B %-d, %Y" }}</time>
         {% endif %}
+	    {% if page.updates %}
+        <dl class="meta">
+            <dt class="title">Updates:</dt>
+            {% for update_hash in page.updates %}
+                {% for update in update_hash %}
+                <dt class="update"><time datetime="{{ update[0] | date: "%Y-%m-%d %H:%M" }}">{{ update[0] | date: "%B %-d, %Y %H:%M" }}</time></dt> <dd class="update">{{ update[1] }}</dd>
+                {% endfor %}
+            {% endfor  %}
+            </dl>
+        {% endif %}
 	</p>
 
 	</header>
