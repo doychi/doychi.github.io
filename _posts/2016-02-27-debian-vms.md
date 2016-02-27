@@ -20,6 +20,7 @@ This entry documents my setup for Debian this time round.  Of course I will be r
 [i3]: http://i3wm.org/ "i3 tiling window manager"
 [vim]: http://www.vim.org/" "VIm - Vi Improved"
 [dots]: https://github.com/EvanPurkhiser/dots/blob/master/README.md "Dots - A dotfile Management Tool"
+[debreduce]: https://wiki.debian.org/ReduceDebian "Reduce Debian's Install Size"
 
 1. [Debian][deb]
 2. [Hyper-V][hv]
@@ -54,7 +55,7 @@ The key components of my setup are:
 
 1. Install the VM in VirtualBox
 2. Remove unwanted packages
-3. Install key packages, e.g. Vim and Git
+3. Package Installtion
 3. Apply the dots configuration
 4. Clone my repos for development
 
@@ -62,27 +63,50 @@ The key components of my setup are:
 
 ## Remove Unwanted Packages
 
+A few useful links for cleaing up unnesecary packages are:
+
+* [Debian Cleanup Tip #6: Remove automatically installed packages that are no longer needed](https://raphaelhertzog.com/2011/03/07/debian-cleanup-tip-6-remove-automatically-installed-packages/)
+* [Removing unnecessary packages with deborphan](https://www.debian-administration.org/article/134/Removing_unnecessary_packages_with_deborphan)
+* **Still to apply** [Reducing the size of the Debian Installation Footprint](https://wiki.debian.org/ReduceDebian)
+* **Still to apply** [Finding packages for deinstallation](http://www.vitavonni.de/blog/201103/2011031502-finding-packages-for-deinstallation.html) - `aptitude search '!?reverse-depends(~i) ~M !?essential'`
+
+Before any packages can be removed, a few packages need to be added to make life easier.  These packages are:
+
+* deborphan
+* ssh
+* vim
+
+This is done by running:
+
+{% highlight bash %}
+aptitude install ssh vim deborphan
+{% endhighlight %}
+
 {% highlight bash %}
 aptitude purge libreoffice
 dpkg -l|grep libreoffice|awk '{print $2}'|xargs aptitude purge
-aptitude purge apache2
-aptitude purge apache2-bin libapache2-mod-dnssd
 aptitude purge gdm3 task-gnome-desktop gnome-shell metacity mutter
 aptitude purge gnome-terminal gnome-terminal-data
+aptitude purge apache2 apache2-bin libapache2-mod-dnssd gnome-control-center gnome-user-share
+dpkg -l|grep -i gnome |awk '{print $2}'|xargs apt-mark markauto
+deborphan --guess-all |xargs aptitude purge -y 
 {% endhighlight %}
 
-## Install Key Packages
+## Package Installtion
+
+### Key Packages
 
 {% highlight bash %}
-aptitude install vim i3 netselect-apt slim
+aptitude install i3 netselect-apt slim
 aptitude install xdg-utils xdg-user-dirs
 aptitude install dpkg-buildpackage
 aptitude install dh_make git-buildpackage
 aptitude install dh-make git-buildpackage
 aptitude install rxvt-unicode-256color
 aptitude install dh-make git-buildpackage
-aptitude install ssh
 {% endhighlight %}
+
+### Other Packages
 
 ## Apply the dots Configuration
 
