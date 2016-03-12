@@ -32,7 +32,7 @@ This entry documents my setup for Debian this time round.  Of course I will be r
 
 ## Overview
 
-So at home I run Windows 10 for my desktop OS so that I can play games without any trouble.  This setup would allow me to run [Hyper-V][hv], but that would mean that the I couldn't transfer the VM to my MacBoo Pro (not that I have yet), so I have setup [VirtualBox][vbox] instead.
+So at home I run Windows 10 for my desktop OS so that I can play games without any trouble.  This setup would allow me to run [Hyper-V][hv], but that would mean that the I couldn't transfer the VM to my MacBook Pro (not that I have yet), so I have setup [VirtualBox][vbox] instead.
 
 In rebuilding the VM this time round I decided not to install [Debian][deb] from scratch.  I  hear a bunch of you asking why.  Well the answer is that I thought it would take longer.  I'm not sure whether I was right or not, but it seems to be working so far (I started writing this blog after getting most the way through the rebuild, so be warned).
 
