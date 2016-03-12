@@ -61,6 +61,13 @@ The key components of my setup are:
 
 ## Install the VM in VirtualBox
 
+1. Follow the installation process for importing a VirtualBox appliance.
+1. Set your correct timezone and locale, by running the following commands:
+{%highlight bash}
+sudo dpkg-reconfigure locales
+sudo dpkg-reconfigure tzdate
+{% endhighlight %}
+
 ## Remove Unwanted Packages
 
 A few useful links for cleaing up unnesecary packages are:
@@ -84,12 +91,21 @@ aptitude install ssh vim deborphan
 
 {% highlight bash %}
 aptitude purge libreoffice
-dpkg -l|grep libreoffice|awk '{print $2}'|xargs aptitude purge
+dpkg -l|grep libreoffice|awk '{print $2}'|xargs aptitude purge -y
 aptitude purge gdm3 task-gnome-desktop gnome-shell metacity mutter
 aptitude purge gnome-terminal gnome-terminal-data
 aptitude purge apache2 apache2-bin libapache2-mod-dnssd gnome-control-center gnome-user-share
 dpkg -l|grep -i gnome |awk '{print $2}'|xargs apt-mark markauto
-deborphan --guess-all |xargs aptitude purge -y 
+aptitude purge bogofilter bluez evolution task-laptop evolution-common libreoffice libreoffice-evolution evolution-plugins
+aptitude purge caribou caribou-antler cdrdao cheese cheese-common libcheese-gtk23 libcheese7
+aptitude purge coinor-libcbc3 coinor-libcoinmp1 libreoffice unoconv libreoffice-calc
+dpkg -l|grep -i burning|awk '{print $2}'|xargs aptitude purge -y
+dpkg -l|grep -i burning|awk '{print $2}'|xargs aptitude purge -y
+dpkg -l|grep -i coinor |awk '{print $2}'|xargs aptitude purge -y
+dpkg -l|grep -i "^..  gnome"|awk '{print $2}' |xargs aptitude purge -y
+aptitude purge gedit-common libpam-gnome-keyring gvfs-backends inkscape nautilus nautilus nautilus-data rhythmbox-data totem-plugins tracker yelp openjdk-7-jre libreoffice-base gucharmap
+dpkg -l|grep "^rc"|awk '{print $2}'|xargs aptitude purge -y
+deborphan --guess-all |xargs aptitude purge -y
 {% endhighlight %}
 
 ## Package Installtion
@@ -107,6 +123,16 @@ aptitude install dh-make git-buildpackage
 {% endhighlight %}
 
 ### Other Packages
+
+Stolen from https://github.com/atom/atom:
+```
+Currently only a 64-bit version is available.
+
+Download atom-amd64.deb from the Atom releases page.
+Run sudo dpkg --install atom-amd64.deb on the downloaded package.
+Launch Atom using the installed atom command.
+The Linux version does not currently automatically update so you will need to repeat these steps to upgrade to future releases.
+```
 
 ## Apply the dots Configuration
 
