@@ -105,6 +105,9 @@ dpkg -l|grep -i coinor |awk '{print $2}'|xargs aptitude purge -y
 dpkg -l|grep -i "^..  gnome"|awk '{print $2}' |xargs aptitude purge -y
 aptitude purge gedit-common libpam-gnome-keyring gvfs-backends inkscape nautilus nautilus nautilus-data rhythmbox-data totem-plugins tracker yelp openjdk-7-jre libreoffice-base gucharmap
 dpkg -l|grep "^rc"|awk '{print $2}'|xargs aptitude purge -y
+dpkg -l| grep "gir1.2\|gimp" | awk '{print $2}'|xargs aptitude purge -y
+aptitude purge argyll argyll-ref colord colord-data
+dpkg -l |sed -n "/eject/d;/DVD/p;/CD/p" |awk '{print $2}' |xargs aptitude purge -y
 deborphan --guess-all |xargs aptitude purge -y
 {% endhighlight %}
 
