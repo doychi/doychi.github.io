@@ -2,6 +2,8 @@
 layout: post
 title:  "Debian VMs"
 date:   2016-02-27 21:03
+updates:
+    - 2016-03-16 23:45: Added more detail to the package deletions, the dosts configuration and Jekyll setup for GitHub Pages.
 categories: debian virutal server configuration
 ---
 
@@ -86,11 +88,11 @@ Before any packages can be removed, a few packages need to be added to make life
 
 This is done by running:
 
-{% highlight bash %}
+~~~ bash
 aptitude install ssh vim deborphan
-{% endhighlight %}
+~~~
 
-{% highlight bash %}
+~~~ bash
 aptitude purge libreoffice
 dpkg -l|grep libreoffice|awk '{print $2}'|xargs aptitude purge -y
 aptitude purge gdm3 task-gnome-desktop gnome-shell metacity mutter
@@ -110,13 +112,13 @@ dpkg -l| grep "gir1.2\|gimp" | awk '{print $2}'|xargs aptitude purge -y
 aptitude purge argyll argyll-ref colord colord-data
 dpkg -l |sed -n "/eject/d;/DVD/p;/CD/p" |awk '{print $2}' |xargs aptitude purge -y
 deborphan --guess-all |xargs aptitude purge -y
-{% endhighlight %}
+~~~
 
 ## Package Installtion
 
 ### Key Packages
 
-{% highlight bash %}
+~~~ bash
 aptitude install i3 netselect-apt slim
 aptitude install xdg-utils xdg-user-dirs
 aptitude install dpkg-buildpackage
@@ -125,13 +127,13 @@ aptitude install dh-make git-buildpackage
 aptitude install rxvt-unicode-256color
 aptitude install dh-make git-buildpackage
 aptitude install dkms build-essential
-{% endhighlight %}
+~~~
 
 ### Other Packages
 
-{% highlight bash %}
+~~~ bash
 aptitude install ruby
-{% endhighlight %}
+~~~
 
 Stolen from https://github.com/atom/atom:
 
