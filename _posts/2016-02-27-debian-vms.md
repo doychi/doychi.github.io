@@ -63,10 +63,11 @@ The key components of my setup are:
 
 1. Follow the installation process for importing a VirtualBox appliance.
 1. Set your correct timezone and locale, by running the following commands:
-{%highlight bash}
-sudo dpkg-reconfigure locales
-sudo dpkg-reconfigure tzdate
-{% endhighlight %}
+
+~~~ bash
+    sudo dpkg-reconfigure locales
+    sudo dpkg-reconfigure tzdate
+~~~
 
 ## Remove Unwanted Packages
 
@@ -123,20 +124,31 @@ aptitude install dh_make git-buildpackage
 aptitude install dh-make git-buildpackage
 aptitude install rxvt-unicode-256color
 aptitude install dh-make git-buildpackage
+aptitude install dkms build-essential
 {% endhighlight %}
 
 ### Other Packages
 
-Stolen from https://github.com/atom/atom:
-```
-Currently only a 64-bit version is available.
+{% highlight bash %}
+aptitude install ruby
+{% endhighlight %}
 
-Download atom-amd64.deb from the Atom releases page.
-Run sudo dpkg --install atom-amd64.deb on the downloaded package.
-Launch Atom using the installed atom command.
-The Linux version does not currently automatically update so you will need to repeat these steps to upgrade to future releases.
-```
+Stolen from https://github.com/atom/atom:
+
+> Currently only a 64-bit version is available.
+> 
+> Download atom-amd64.deb from the Atom releases page.
+> Run sudo dpkg --install atom-amd64.deb on the downloaded package.
+> Launch Atom using the installed atom command.
+> The Linux version does not currently automatically update so you will need to repeat these steps to upgrade to future releases.
 
 ## Apply the dots Configuration
 
 ## Clone My Repos for Development
+
+### doychi.github.io
+
+1. Install GitHub Page dependencies `aptitude install ruby ruby-dev zlib1g-dev`
+1. Install the ruby bundler `gem install bundler`
+1. Install Jekyll `bundle exec jekyll build --save`
+1. Start Jekyll, which will install all the github pages requirements `bundle exec jekyll serve`
