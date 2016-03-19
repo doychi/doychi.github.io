@@ -9,8 +9,6 @@ updates:
 categories: debian virutal server configuration
 ---
 
-**This is an unfinished with updates to come**
-
 Well, when I was shutting down my PC last week Windows crashed and apparently
 corrupted my development VM.  A very sad situation, as I didn't have backups of
 the virutal machine disks.  Fortunately the only thing I have really lost is the
