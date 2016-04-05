@@ -1,5 +1,9 @@
 <header>
+  {% if site.banner == blank %}
   <h1 class="site-title"><a href="/">{{ site.name }}</a></h1>
+  {% else %}
+  <img src="/img/{{ site.banner }}" alt="{{ site.name }}">
+  {% endif %}
   <nav class="main-nav">
     <a href="#" class="opener show-on-mobiles">...</a>
     <div class="clear-opener show-on-mobiles"></div>

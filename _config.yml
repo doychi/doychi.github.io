@@ -1,5 +1,7 @@
 ##The website title
-name: Doychi's Documentation
+name: Doychi's Docs
+##put desired image in img/ directory and set the value accordingly. If not defined, a placeholder image will be used.
+banner: banner.png
 ##Markdown processor
 markdown: kramdown
 ##syntax highlighter. change it to pygments
@@ -34,7 +36,7 @@ links:
   github: doychi
 
 ##put desired image in img/ directory and set the value accordingly. If not defined, a placeholder image will be used.
-about_image: placeholder.jpg
+about_image: myAvatar.svg
 ##comment this if you want full width posts with no sidebar
 sidebar: on
 encoding: utf8
