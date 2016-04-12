@@ -39,7 +39,7 @@ links:
 about_image: myAvatar.svg
 ##comment this if you want full width posts with no sidebar
 sidebar: on
-encoding: utf8
+encoding: utf-8
 
 #Gems to use
 gems:
