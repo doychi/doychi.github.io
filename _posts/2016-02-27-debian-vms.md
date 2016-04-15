@@ -7,7 +7,8 @@ updates:
     - 2016-03-17 22:31: Added details about configuring the VM/host interaction.
     - 2016-03-18 16:02: Tidied up the post and added the details about the clipboard setup.
     - 2016-04-12 22:32: Added the change default terminal to URxvt.
-    - 2016-04-15 13:29: Added two programs to the list of installs and corrected the hostname.
+    - 2016-04-15 13:29: Added two programs to the list of installs.
+    - 2016-04-16 00:46: Corrected the version of Vim so that the clipboard works with X terminals and corrected the hostname.
 categories: debian virutal server configuration
 ---
 
@@ -35,6 +36,7 @@ referencing my previous posts, where appropraite.
 [vim]: http://www.vim.org/" "VIm - Vi Improved"
 [vimxclip]: http://www.electricmonk.nl/log/2011/04/05/vim-x11-and-the-clipboard-copy-paste/ "Vim, X11 and the clipboard (Copy, paste)"
 [xclip]: https://mutelight.org/subtleties-of-the-x-clipboard "Subtleties of the X Clipboard"
+[host]: http://www.cyberciti.biz/faq/debian-change-hostname-permanently/ "nixCraft"
 
 1. [Debian][deb]
 1. [Git][git]
@@ -130,7 +132,8 @@ life easier.  These packages are:
 This is done by running:
 
 ~~~ bash
-    $ aptitude install ssh vim deborphan
+    $ aptitude install ssh vim-gtk deborphan
+    $ aptitude purge vim-tiny
 ~~~
 
 The packages that I removed is covered by the commands below.  Essentially, this
@@ -203,8 +206,8 @@ The default terminal also needs to be changed to rxvt-unicode, which can be
 done by:
 
 ~~~ bash
-$ sudo update-alternatives --config x-terminal-emulator
-$ sudo aptitude purge xterm
+    $ sudo update-alternatives --config x-terminal-emulator
+    $ sudo aptitude purge xterm
 ~~~
 
 #### Other Packages
@@ -235,14 +238,15 @@ repeat these steps to upgrade to future releases.
 1. Downloading the tar file from [pt][pt-rel] site.
 
 ~~~bash
-$ mkdir -p ~/Build/tmp
-$ sudo gem install fpm
-$ cd ~/Build
-$ wget https://github.com/monochromegane/the_platinum_searcher/releases/download/<specific_release>
-$ tar zxf pt_linux_amd64.tar.gz -C tmp
-$ rm ~/Build/tmp/pt_linux_amd64/Readme.md
-$ fpm -s dir -t deb -C ~/Build/tmp/pt_linux_amd64 -n "the-platinum-searcher" \
--v <version> --iteration <iternation> --licence MIT --category extra -e 
+    $ mkdir -p ~/Build/tmp
+    $ sudo gem install fpm
+    $ cd ~/Build
+    $ wget https://github.com/monochromegane/the_platinum_searcher/releases/download/<specific_release>
+    $ tar zxf pt_linux_amd64.tar.gz -C tmp
+    $ rm ~/Build/tmp/pt_linux_amd64/Readme.md
+    $ fpm -s dir -t deb -C ~/Build/tmp/pt_linux_amd64 \
+      -n "the-platinum-searcher" -v <version> --iteration <iternation> \
+      --licence MIT --category extra -e 
 ~~~
 
 NB: The resulting package does report an error, but works, when installed.
@@ -256,11 +260,38 @@ would have lost all my configuration in the crash.
 As I have set dots up before, and documented it, I followed the instructions in
 my [Managing Debian Dotfiles]({% post_url 2015-05-31-debian-dotfiles %})
 
-#### Remove the OSBoxes login
+### Clean Up the Environment
+
+There are a few things that need to be done to clean up the environment, such
+as removing the default user from the OSBoxes image and changing the hostname.
+A new user also needs to be added to administer the box, so they must be added
+to the `sudo` and `vboxsf` groups.
 
 ~~~ bash
-$ sudo userdel osboxes
+    $ useradd <username> -G sudo,vboxsf
+    $ sudo userdel osboxes
 ~~~
+
+Log out and login as the new user.
+
+~~~ bash
+    $ sudo vim /etc/hostname
+~~~
+
+Change the name here to the new hostname.
+
+~~~ bash
+    $ sudo vim /etc/hosts
+~~~
+
+Change osboxes to the new hostname.
+
+~~~ bash
+    $ /etc/init.d/hostname.sh restart
+~~~
+
+The instructions above for changing the host name are care of [nixCraft][host]
+
 
 ### Clone My Repos for Development
 
