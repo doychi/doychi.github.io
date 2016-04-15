@@ -6,6 +6,8 @@ updates:
     - 2016-03-16 23:45: Added more detail to the package deletions, the dosts configuration and Jekyll setup for GitHub Pages.
     - 2016-03-17 22:31: Added details about configuring the VM/host interaction.
     - 2016-03-18 16:02: Tidied up the post and added the details about the clipboard setup.
+    - 2016-04-12 22:32: Added the change default terminal to URxvt.
+    - 2016-04-15 13:29: Added two programs to the list of installs and corrected the hostname.
 categories: debian virutal server configuration
 ---
 
@@ -27,6 +29,8 @@ referencing my previous posts, where appropraite.
 [i3]: http://i3wm.org/ "i3 tiling window manager"
 [jitblog]: http://www.jitblog.net/oracle-virtualbox-install-fuest-additions-on-linux/ "JiT Blog"
 [osb]: http://www.osboxes.org/debian-8-jessie-images-available-for-virtualbox-and-vmware/ "Debian 8 from OSBoxes"
+[pt]: https://github.com/monochromegane/the_platinum_searchers "The Platinum Searcher"
+[pt-rel]: https://github.com/monochromegane/the_platinum_searcher/releases "The Platinum Searcher releases"
 [vbox]: https://www.virtualbox.org/ "VirtualBox"
 [vim]: http://www.vim.org/" "VIm - Vi Improved"
 [vimxclip]: http://www.electricmonk.nl/log/2011/04/05/vim-x11-and-the-clipboard-copy-paste/ "Vim, X11 and the clipboard (Copy, paste)"
@@ -195,7 +199,17 @@ they were or not.
     $ aptitude install dkms build-essential
 ~~~
 
+The default terminal also needs to be changed to rxvt-unicode, which can be
+done by:
+
+~~~ bash
+$ sudo update-alternatives --config x-terminal-emulator
+$ sudo aptitude purge xterm
+~~~
+
 #### Other Packages
+
+##### Atom
 
 I occasionally need to use a GUI, non-modal, text editor (yes ther are some
 times it is easier).  For this I use Atom, which can be installed by following
@@ -209,7 +223,29 @@ _NB:_ Currently only a 64-bit version is available.
 1. Launch Atom using the installed atom command.
 
 The Linux version does not currently automatically update so you will need to
+
 repeat these steps to upgrade to future releases.
+
+##### The Platinum Searcher
+
+[The Platinum Searcher][pt], pt for short, is a grep replacement.
+
+1. Ensure that the Effing Package Manger is installed (see <https://github.com/jordansissel/fpm/wiki for further details> and [Digital Ocean's tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-fpm-to-easily-create-packages-in-multiple-formats)).
+1. Ensure that Pandoc is installed.
+1. Downloading the tar file from [pt][pt-rel] site.
+
+~~~bash
+$ mkdir -p ~/Build/tmp
+$ sudo gem install fpm
+$ cd ~/Build
+$ wget https://github.com/monochromegane/the_platinum_searcher/releases/download/<specific_release>
+$ tar zxf pt_linux_amd64.tar.gz -C tmp
+$ rm ~/Build/tmp/pt_linux_amd64/Readme.md
+$ fpm -s dir -t deb -C ~/Build/tmp/pt_linux_amd64 -n "the-platinum-searcher" \
+-v <version> --iteration <iternation> --licence MIT --category extra -e 
+~~~
+
+NB: The resulting package does report an error, but works, when installed.
 
 ### Apply the dots Configuration
 
@@ -223,7 +259,7 @@ my [Managing Debian Dotfiles]({% post_url 2015-05-31-debian-dotfiles %})
 #### Remove the OSBoxes login
 
 ~~~ bash
-    $ sudo userdel osboxes
+$ sudo userdel osboxes
 ~~~
 
 ### Clone My Repos for Development
