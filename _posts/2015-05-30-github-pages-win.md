@@ -1,8 +1,15 @@
 ---
 layout: post
 title:  "Setting Up GitHub Pages and Jekyll on Windows"
-date:   2015-05-30 21:41
-categories: github jekyll blog
+date:   2015-05-30 21:41 +10:00
+categories:
+    - github
+    - jekyll
+    - blog
+tags:
+    - github
+    - jekyll
+    - blog
 ---
 
 In this article I setup a Windows environment to run [Jekyll][jek] to

@@ -1,8 +1,15 @@
 ---
 layout: post
 title:  "Setting Up Caddy & NSSM"
-date:   2016-01-24 12:55:50
-categories: web server windows service blog
+date:   2016-01-24 12:55:50 +11:00
+categories:
+    - web server
+    - windows
+    - blog
+tags:
+    - web server
+    - windows
+    - blog
 ---
 
 I have a private diary that I want to write in [markdown][md].  The problem is

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Debian VMs"
-date:   2016-02-27 21:03
+date:   2016-02-27 21:03 +11:00
 updates:
     - 2016-03-16 23:45: Added more detail to the package deletions, the dosts configuration and Jekyll setup for GitHub Pages.
     - 2016-03-17 22:31: Added details about configuring the VM/host interaction.
@@ -9,7 +9,13 @@ updates:
     - 2016-04-12 22:32: Added the change default terminal to URxvt.
     - 2016-04-15 13:29: Added two programs to the list of installs.
     - 2016-04-16 00:46: Corrected the version of Vim so that the clipboard works with X terminals and corrected the hostname.
-categories: debian virutal server configuration
+categories:
+    - debian
+    - configuration
+tags:
+    - debian
+    - virutal server
+    - configuration
 ---
 
 Well, when I was shutting down my PC last week Windows crashed and apparently

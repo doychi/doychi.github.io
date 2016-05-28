@@ -1,10 +1,16 @@
 ---
 layout: post
 title:  "Managing Debian Dotfiles"
-date:   2015-05-31 12:55:25
+date:   2015-05-31 12:55:25 +10:00
 updates:
     - 2016-03-19 22:20:    Fixed a typo in the xdg-utils package
-categories: debian dot files managing
+categories:
+    - debian
+    - dot files
+    - management
+tags:
+    - debian
+    - dot files
 ---
 
 Managing dot files has long been a problem across multiple machines.  For me

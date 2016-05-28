@@ -7,6 +7,10 @@ markdown: kramdown
 ##syntax highlighter. change it to pygments
 highlighter: rouge
 
+## Allow posts that are in the future.  This can be useful for fixing some
+## issues with Ruby's processing of dates
+#future: true
+
 ##define base_url for valid usage in sitemap.xml and robots.txt
 base_url: https://doychi.github.io
 sass:
