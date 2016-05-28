@@ -30,8 +30,8 @@ This, for now has ended up using the Go language web server [Caddy][caddy] and
 
 ## Tasks
 
-1. Follow the instructions for developing a [MDWiki](mdwiki).  This essentially breaks down to downloading the MDWiki file and then adding markdown files to a directory (or directory structure).
-1. Follow the instructions for installing [Caddy](caddy).
+1. Follow the instructions for developing a [MDWiki][mdwiki].  This essentially breaks down to downloading the MDWiki file and then adding markdown files to a directory (or directory structure).
+1. Follow the instructions for installing [Caddy][caddy].
     1. I drop the Caddy executable into the into the same folder as the top level MDWiki.
     1. The basic configuration was pretty simple:
 

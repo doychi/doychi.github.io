@@ -19,7 +19,7 @@ I've had Burp setup before in my home environment.  I found it to be pretty effe
 [burp]: https://burp.grke.org/ "Burp Backup"
 [syno]: http://www.synology.com/ "Synology NAS"
 [comm]: https://synocommunity.com/ "SynoCommunity"
-[dsm]: htts://www.synology.com/en-us/dsm/ "Synology DiskStation Manager"
+[dsm]: https://www.synology.com/en-us/dsm/ "Synology DiskStation Manager"
 [synodeb]: https://github.com/SynoCommunity/spksrc/wiki/Debian-Chroot "SynCommunity Debian"
 
 1. [Burp Backup][burp]
