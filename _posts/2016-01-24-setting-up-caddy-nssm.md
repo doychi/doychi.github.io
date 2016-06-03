@@ -10,6 +10,8 @@ tags:
     - web server
     - windows
     - blog
+update:
+    - 2016-06-03 23:33: Updated the syntax highlighting for config file.
 ---
 
 I have a private diary that I want to write in [markdown][md].  The problem is
@@ -35,8 +37,9 @@ This, for now has ended up using the Go language web server [Caddy][caddy] and
     1. I drop the Caddy executable into the into the same folder as the top level MDWiki.
     1. The basic configuration was pretty simple:
 
+~~~ perl
              # Local Diary configuration
-             localhost:xxxx
+             Localhost:xxxx
              
              gzip
              # I don't want to enable directory browsing over the 
@@ -63,7 +66,8 @@ This, for now has ended up using the Go language web server [Caddy][caddy] and
                     }
                 }
             }
+~~~
 
-        This gives a nice simple setup with a low overhead on the system,
-        which is only available on the home address.
+This gives a nice simple setup with a low overhead on the system, which is only
+available on the home address.
 
