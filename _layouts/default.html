@@ -1,35 +1,88 @@
-<!DOCTYPE html>
-<html xmlns:og="og: http://ogp.me/ns#">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }} | {{ site.name }}</title>
-        {% if site.links.github %}
-          <meta name="author" content="{{ site.links.github }}">
-        {% endif %}
-        <meta name="title" content="{{ page.title }}" >
-        <link rel="icon" type="image/png" href="{{site.url}}/favicon.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% include ssn.html %}
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    </head>
-    <body class="wrap">
-      <!--[if lt IE 8]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
-      {% include header.html %}
-      <section class="content">
-        {{ content }}
-      </section>
-      <footer class="grid site-footer">
-        <p>&copy;&nbsp;{{ site.name }}</p>
-        <p><small>Powered by <a href="http://jekyllrb.com" target="_blank"><em>Jekyll</em></a> using <a href="http://bitwiser.in/bitwiser/" target="_blank"><em>Bitwiser</em></a> theme.</small></p>
+
+      <title> {{ page.title }} </title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <a href="/">
+          <h1> {{ site.name }} </h1>
+          <h2>{{ site.tagline }}</h2>
+        </a>
+        <a href="https://github.com/doychi/doychi.github.io" class="button"><small>View this project on</small> GitHub</a>
+      </div>
+      <nav class="main-nav">
+        <div>
+          <ul>
+            <li><a href="/"><em>Home</em></a></li>
+            <li><a href="/notes.html"><em>Notes<em></a></li>
+            <li><a href="/about.html"><em>About<em></a></li>
+        </div>
+      </nav>
+    </header>
+    <!--[if lt IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+      <div id="content-wrapper">
+        <div class="inner clearfix">
+          <section id="main-content">
+
+            {{ content }}
+
+          </section>
+
+          <aside id="sidebar">
+            <div class="about">
+              <p>
+              {% if site.about_image %}
+              <img src="/img/{{ site.about_image }}" alt="Avatar">
+              {% elsif site.links.github %}
+              <img src="https://github.com/{{ site.links.github }}.png" alt="Avatar">
+              {% else %}
+              <img src="/img/placeholder.jpg" alt="Avatar">
+              {% endif %}
+              </p>
+              <ul class="links">
+                {% if site.links.github %}
+                <li><a href="https://github.com/{{ site.links.github }}" target="_blank">Github</a></li>
+                {% endif %}
+                {% if site.links.twitter %}
+                <li><a href="https://twitter.com/{{ site.links.twitter }}" target="_blank">Twitter</a></li>
+                {% endif %}
+                {% if site.links.facebook %}
+                <li><a href="https://www.facebook.com/{{ site.links.facebook }}" target="_blank">Facebook</a></li>
+                {% endif %}
+                {% if site.links.email %}
+                <li><a href="mailto:{{ site.links.email }}">Email</a></li>
+                {% endif %}
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <footer>
+        <div class="inner">
+            <a href="https://github.com/jasonlong/architect-theme">architect-theme</a> is maintained by <a href="https://github.com/jasonlong">jasonlong</a> <strong>|</strong>
+
+          <a href="https://github.com/pietromenna/jekyll-architect-theme">jekyll-architect-theme</a> is maintained by <a href="https://github.com/pietromenna">pietromenna</a>
+        </div>
       </footer>
-      {% if site.ga_id %}
-        {% include analytics.html %}
-      {% endif %}
-      <script src="/js/script.js"></script>
-    </body>
+
+
+  </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: About
 sitemap:
     priority: 1.0

@@ -1,5 +1,6 @@
 ##The website title
 name: Doychi's Docs
+tagline: Traking my configuration
 ##put desired image in img/ directory and set the value accordingly. If not defined, a placeholder image will be used.
 banner: banner.png
 ##Markdown processor
@@ -47,8 +48,8 @@ encoding: utf-8
 
 #Gems to use
 gems:
-    - jemoji
-    - jekyll-feed
+    #- jemoji
+      #- jekyll-feed
     - jekyll-paginate
-    - jekyll-mentions
-    - jekyll-sitemap
+      #- jekyll-mentions
+      #- jekyll-sitemap
