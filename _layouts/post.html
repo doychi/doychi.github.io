@@ -2,7 +2,6 @@
 layout: default
 ---
 <h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
 {% if page.tags and page.tags.size > 0 %}
 <p class="tags">
     Tagged:
@@ -12,4 +11,24 @@ layout: default
 </p>
 {% endif %}
 
+<p class="meta">Created: {{ page.date | date: "%a, %e %b %Y %H:%M" }}
+{% if page.updates and page.updates.size > 0 %}
+<span class="meta right">Last Updated: {{ page.updates.last.date | date: "%a, %e %b %Y %H:%M" }}</span>
+{% endif %}
+</p>
+
 {{ content }}
+
+{% if page.updates and page.updates.size > 0 %}
+<hr>
+<dl class="meta">
+    <dt>Change log</dt>
+    <dd>
+      <dl>
+      {% for update in page.updates reversed %}
+      <dt>{{ update.date | date: "%a, %e %b %Y %H:%M" }}</dt>
+      <dd>{{ update.change }}</dd>
+      {% endfor %}
+      </dl>
+</dl>
+{% endif %}

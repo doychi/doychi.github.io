@@ -3,12 +3,18 @@ layout: post
 title:  "Debian VMs"
 date:   2016-02-27 21:03 +11:00
 updates:
-    - 2016-03-16 23:45: Added more detail to the package deletions, the dosts configuration and Jekyll setup for GitHub Pages.
-    - 2016-03-17 22:31: Added details about configuring the VM/host interaction.
-    - 2016-03-18 16:02: Tidied up the post and added the details about the clipboard setup.
-    - 2016-04-12 22:32: Added the change default terminal to URxvt.
-    - 2016-04-15 13:29: Added two programs to the list of installs.
-    - 2016-04-16 00:46: Corrected the version of Vim so that the clipboard works with X terminals and corrected the hostname.
+    - date: 2016-03-16 23:45:00 +11:00
+      change: Added more detail to the package deletions, the dosts configuration and Jekyll setup for GitHub Pages.
+    - date: 2016-03-17 22:31:00 +11:00
+      change: Added details about configuring the VM/host interaction.
+    - date: 2016-03-18 16:02:00 +11:00
+      change: Tidied up the post and added the details about the clipboard setup.
+    - date: 2016-04-12 22:32:00 +11:00
+      change: Added the change default terminal to URxvt.
+    - date: 2016-04-15 13:29:00 +11:00
+      change: Added two programs to the list of installs.
+    - date: 2016-04-16 00:46:00 +11:00
+      change:  Corrected the version of Vim so that the clipboard works with X terminals and corrected the hostname.
 categories:
     - debian
     - configuration

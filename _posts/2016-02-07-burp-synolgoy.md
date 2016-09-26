@@ -3,8 +3,12 @@ layout: post
 title:  "Burp Backup Configuration for Synology Diskstation"
 date:   2016-02-07 12:20:43 +11:00
 updates:
-    - 2016-02-20 10:55: Fixed some formatting issues
-    - 2016-02-19 22:55: Added the step to update the change log
+    - date: 2016-02-20 10:55:00 +11:00
+      change:  "Fixed some formatting issues"
+    - date: 2016-02-19 22:55:00 +11:00
+      change: "Added the step to update the change log"
+    - date: 2016-09-26 20:07:00 +11:00
+      change: "Added details to the steps in the install process and the additional package for Burp 2"
 categories:
     - backup 
     - synology
@@ -85,9 +89,10 @@ $ apt-get install librsync-dev libz-dev libssl-dev uthash-dev \
 
 Follow the dh-make instructions in [How To Build a Package from Source the Smart Way](http://forums.debian.net/viewtopic.php?t=38976).
 
-1. ``wget http://download.sourceforge.net/project/burp/burp-1.4.40/burp-1.4.40.tar.bz2``
+1. ``wget http://download.sourceforge.net/project/burp/burp-1.4.40/burp-1.4.40.tar.bz2``.
 1. Extract the file into a directory, as per the link above.
 1. Rename the source file ``mv burp-1.4.40.tar.bz2 burp-1.4.40.orig.tar.bz2``
-1. Delete the format file:  ``rm debian/source/format``
+1. Change into the directory extracted from the downloaded files.
+1. Delete the format file:  ``rm debian/source/format``.
 1. Update the Debian change log ``debian/changelog``.  I just search for examples online.  One day I will write a script extract the log from the Burp change log.
 1. Run the Debian build: ``dpkg-buildpakcage -sa -j3 -us -uc``

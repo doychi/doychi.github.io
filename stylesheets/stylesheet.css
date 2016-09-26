@@ -913,8 +913,12 @@ footer {
 
 .meta {
     font-style: normal;
+    font-size: x-small;
     margin-top: .5em;
     margin-bottom: .5em;
+}
+.right {
+    float: right;
 }
 
 /*
