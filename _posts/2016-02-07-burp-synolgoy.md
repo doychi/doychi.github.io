@@ -7,8 +7,8 @@ updates:
       change:  "Fixed some formatting issues"
     - date: 2016-02-19 22:55:00 +11:00
       change: "Added the step to update the change log"
-    - date: 2016-09-26 20:07:00 +11:00
-      change: "Added details to the steps in the install process and the additional package for Burp 2"
+    - date: 2016-09-26 20:07:00 +10:00
+      change: "Added details to the steps in the install process and the additional packages for Burp 2."
 categories:
     - backup 
     - synology
@@ -79,7 +79,7 @@ The build environment for Burp is pretty standard and can be installed with the 
 {% highlight bash %}
 $ apt-get install librsync-dev libz-dev libssl-dev uthash-dev \
   libyajl-dev libncurses5-dev librsync1 make g++ dh-make fakeroot \
-  dh-autoreconf libtinfo-dev libattr1-dev libacl1-dev
+  dh-autoreconf libtinfo-dev libattr1-dev libacl1-dev pkg-config
 {% endhighlight %}
 
 - dh-make - This package is for building a Burp Debian package

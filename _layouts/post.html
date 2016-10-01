@@ -11,9 +11,9 @@ layout: default
 </p>
 {% endif %}
 
-<p class="meta">Created: {{ page.date | date: "%a, %e %b %Y %H:%M" }}
+<p class="meta">Created: {{ page.date | date: "%a, %e %b %Y %H:%M %z" }}
 {% if page.updates and page.updates.size > 0 %}
-<span class="meta right">Last Updated: {{ page.updates.last.date | date: "%a, %e %b %Y %H:%M" }}</span>
+<span class="meta right">Last Updated: {{ page.updates.last.date | date: "%a, %e %b %Y %H:%M %z" }}</span>
 {% endif %}
 </p>
 
@@ -26,7 +26,7 @@ layout: default
     <dd>
       <dl>
       {% for update in page.updates reversed %}
-      <dt>{{ update.date | date: "%a, %e %b %Y %H:%M" }}</dt>
+      <dt>{{ update.date | date: "%a, %e %b %Y %H:%M %z" }}</dt>
       <dd>{{ update.change }}</dd>
       {% endfor %}
       </dl>

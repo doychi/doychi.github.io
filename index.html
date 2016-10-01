@@ -8,7 +8,7 @@ title: Architect Theme by Jason Long
     <div class="posts">
         {% for post in paginator.posts %}
         <article class="post">
-            <div class="post title"><span>{{ post.date | date: "%a, %e %b %Y %H:%M" }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
+            <div class="post title"><span>{{ post.date | date: "%a, %e %b %Y %H:%M %z" }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
             {% if post.tags and post.tags.size > 0 %}
             <div class="tags">
                 Tagged:
