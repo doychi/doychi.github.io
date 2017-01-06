@@ -9,6 +9,7 @@ updates:
     - 2016-04-12 22:32: Added the change default terminal to URxvt.
     - 2016-04-15 13:29: Added two programs to the list of installs.
     - 2016-04-16 00:46: Corrected the version of Vim so that the clipboard works with X terminals and corrected the hostname.
+    - 2017-01-06 22:15: Added FZF configuration and replaced The Platinum Searcher with RipGrep.
 categories: debian virutal server configuration
 ---
 
@@ -30,15 +31,22 @@ referencing my previous posts, where appropraite.
 [i3]: http://i3wm.org/ "i3 tiling window manager"
 [jitblog]: http://www.jitblog.net/oracle-virtualbox-install-fuest-additions-on-linux/ "JiT Blog"
 [osb]: http://www.osboxes.org/debian-8-jessie-images-available-for-virtualbox-and-vmware/ "Debian 8 from OSBoxes"
+<!--
 [pt]: https://github.com/monochromegane/the_platinum_searchers "The Platinum Searcher"
 [pt-rel]: https://github.com/monochromegane/the_platinum_searcher/releases "The Platinum Searcher releases"
+-->
+[rip]: https://github.com/BurntSushi/ripgrep "RipGrep home page"
+[rip-rel]: https://github.com/BurntSushi/ripgrep/releases "RipGrep Release"
 [vbox]: https://www.virtualbox.org/ "VirtualBox"
 [vim]: http://www.vim.org/" "VIm - Vi Improved"
 [vimxclip]: http://www.electricmonk.nl/log/2011/04/05/vim-x11-and-the-clipboard-copy-paste/ "Vim, X11 and the clipboard (Copy, paste)"
 [xclip]: https://mutelight.org/subtleties-of-the-x-clipboard "Subtleties of the X Clipboard"
 [host]: http://www.cyberciti.biz/faq/debian-change-hostname-permanently/ "nixCraft"
+[fzf]: http://github.com/junegunn/fzf "fzf"
+[jddots]: {% post_url 2015-05-31-debian-dotfiles %} "Doychi's Dots configuration"
 
 1. [Debian][deb]
+1. [fzf][fzf]
 1. [Git][git]
 1. [Hyper-V][hv]
 1. [i3 Tiling Window Manager][i3]
@@ -82,6 +90,7 @@ development.
 * [dots][dots]
 * [Vim][vim]
 * [Git][git]
+* Other tools, such as [fzf][fzf].
 
 
 ## Installation/Configuration Steps
@@ -93,6 +102,7 @@ development.
 3. Package Installtion
 3. Apply the dots configuration
 4. Clone my repos for development
+5. Install other tools.
 
 ### Install the VM in VirtualBox
 
@@ -229,11 +239,35 @@ The Linux version does not currently automatically update so you will need to
 
 repeat these steps to upgrade to future releases.
 
+##### RipGrep
+
+[RipGrep][rip] is a grep replacement written in [Rust](http://www.rust-lang.org/).
+It is purportedly faster than grep, but also allows for filtering by file type.o
+
+1. Download the latest version of [RipGrep][rip-rel] for x86_64.
+1. Run the installation steps below, noting that there are some bits you will need to change.
+
+~~~bash
+    $ tar zxf ripgrep-<version>-x86_64-unknown-linux-musl.tar.gz 
+    $ cd ripgrep-<version>-x86_64-unknown-linux-musl/
+    $ fpm -s dir -t deb -e -n ripgrep --category Utilities --license Unlicence \
+      --description "ripgrep is a line oriented search tool that combines the usability of The Silver Searcher (an ack clone) with the raw speed of GNU grep. ripgrep works by recursively searching your current directory for a regex pattern. ripgrep has first class support on Windows, Mac and Linux, with binary downloads available for every release.
+
+      ripgrep's regex engine uses finite automata and guarantees linear time searching. Because of this, features like backreferences and arbitrary lookaround are not supported." \
+      --url https://github.com/BurntShshi/ripgrep --vendor BurntSushi \
+      --maintainer doychi_dev@yahoo.com.au -v <version> --iteration <iteration> \
+      complete/rg.bash-completion=/etc/bash_completion.d/rg.bash-completion \
+      rg=/usr/local/bin/rg
+    $ sudo dpkg -i ripgrep_<version>-<iteration>_amd64.deb 
+~~~
+
+
+<!--
 ##### The Platinum Searcher
 
 [The Platinum Searcher][pt], pt for short, is a grep replacement.
 
-1. Ensure that the Effing Package Manger is installed (see <https://github.com/jordansissel/fpm/wiki for further details> and [Digital Ocean's tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-fpm-to-easily-create-packages-in-multiple-formats)).
+1. Ensure that the Effing Package Manger is installed (see <https://github.com/jordansissel/fpm/wiki> for further details and [Digital Ocean's tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-fpm-to-easily-create-packages-in-multiple-formats)).
 1. Ensure that Pandoc is installed.
 1. Downloading the tar file from [pt][pt-rel] site.
 
@@ -250,6 +284,23 @@ repeat these steps to upgrade to future releases.
 ~~~
 
 NB: The resulting package does report an error, but works, when installed.
+-->
+
+##### fzf 
+
+[fzf][fzf] is a command line fuzzy searcher, similar to tools like grep.  The
+installation process is documented clearing for individuals on the [fzf][fzf],
+but are repeated here for the completeness of this document.o
+
+As the installation scripts for [fzf][fzf] only install [fzf][fzf] for the user
+running the installation, I have not packaged the nstallation.
+
+~~~bash
+    $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    $ ~/.fzf/install
+~~~
+
+After installing [fzf][fzf], [dots][jddots] files may need to be updated (see below).
 
 ### Apply the dots Configuration
 
@@ -258,7 +309,7 @@ previous work to ensure I always have a copy of my configuration, otherwise I
 would have lost all my configuration in the crash.
 
 As I have set dots up before, and documented it, I followed the instructions in
-my [Managing Debian Dotfiles]({% post_url 2015-05-31-debian-dotfiles %})
+my [Managing Debian Dotfiles][jddots]
 
 ### Clean Up the Environment
 
