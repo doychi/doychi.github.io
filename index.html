@@ -1,34 +1,48 @@
 ---
-layout: home
-title: Home
-sitemap:
-priority: 1.0
-changefreq: weekly
-lastmod: 2014-07-07T16:57:30+05:30
+layout: default
+title: Architect Theme by Jason Long
 ---
-{% for post in paginator.posts %}
-<div class="unit whole single-post-excerpt">
-	<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-	<div class="meta-info">
-		<span class="meta"><time class="timeago postlist-meta" datetime="{{ post.date | date: "%Y-%m-%d" }}"><i class="fa fa-calendar"></i>{{ post.date | date: "%B %-d, %Y" }}</time></span>
-		{% if post.tags and post.tags.size > 0 %}
-			<div class="tags">
-				Tagged:
-				{% for tag in post.tags %}
-				<span><i class="fa fa-tag"></i>{{ tag }}</span>
-				{% endfor %}
-			</div>
-		{% endif %}
-	</div>
-	<p class="description">{{ post.excerpt | strip_html}}</p>
+
+<div id="home">
+    <h1>Blog Posts</h1>
+    <div class="posts">
+        {% for post in paginator.posts %}
+        <article class="post">
+            <div class="post title"><span>{{ post.date | date: "%a, %e %b %Y %H:%M %z" }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
+
+            {% if post.tags and post.tags.size > 0 %}
+            <div class="tags">
+                Tagged:
+                {% for tag in post.tags %}
+                <span><i class="tag-before"></i>{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% if post.excerpt %}
+                {{ post.excerpt }}
+            {% endif %}
+
+            {% if post.updates and post.updates.size > 0 %}
+            <div class="meta right">
+            Last Updated: {{ post.updates.last.date | date: "%a, %e %b %Y %H:%M %z" }}
+            </div>
+            {% endif %}
+            <p class="post more"><a href="{{ site.baseurl }}{{ post.url }}">Read More&hellip;</a><p>
+        </article>
+        {% endfor %}
+    </div>
 </div>
-{% endfor %}
-<div class="unit whole paginator">
-	{% if paginator.previous_page %}
-	<a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
-	{% endif %}
-	<span>Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-	{% if paginator.next_page %}
-	<a href="{{ paginator.next_page_path }}" class="next">Next</a>
-	{% endif %}
+
+<div class="pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+    {% else %}
+    <span class="previous">Previous</span>
+    {% endif %}
+    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    {% else %}
+    <span class="next ">Next</span>
+    {% endif %}
 </div>

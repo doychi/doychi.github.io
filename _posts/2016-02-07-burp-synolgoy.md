@@ -1,11 +1,21 @@
 ---
 layout: post
 title:  "Burp Backup Configuration for Synology Diskstation"
-date:   2016-02-07 12:20:43
+date:   2016-02-07 12:20:43 +11:00
 updates:
-    - 2016-02-20 10:55: Fixed some formatting issues
-    - 2016-02-19 22:55: Added the step to update the change log
-categories: backup synology burp
+    - date: 2016-02-20 10:55:00 +11:00
+      change:  "Fixed some formatting issues"
+    - date: 2016-02-19 22:55:00 +11:00
+      change: "Added the step to update the change log"
+    - date: 2016-09-26 20:07:00 +10:00
+      change: "Added details to the steps in the install process and the additional packages for Burp 2."
+categories:
+    - backup 
+    - synology
+    - burp
+tags:
+    - backup 
+    - synology
 ---
 I've had Burp setup before in my home environment.  I found it to be pretty effective, but now I have a [Synology NAS][syno] and want to move the backups to this device.  In this entry I will be configuring [Burp][burp] on a Synology DS414, using the [SynoCommunity][comm] [Debian][synodeb] environment.
 
@@ -13,7 +23,7 @@ I've had Burp setup before in my home environment.  I found it to be pretty effe
 [burp]: https://burp.grke.org/ "Burp Backup"
 [syno]: http://www.synology.com/ "Synology NAS"
 [comm]: https://synocommunity.com/ "SynoCommunity"
-[dsm]: htts://www.synology.com/en-us/dsm/ "Synology DiskStation Manager"
+[dsm]: https://www.synology.com/en-us/dsm/ "Synology DiskStation Manager"
 [synodeb]: https://github.com/SynoCommunity/spksrc/wiki/Debian-Chroot "SynCommunity Debian"
 
 1. [Burp Backup][burp]
@@ -69,7 +79,7 @@ The build environment for Burp is pretty standard and can be installed with the 
 {% highlight bash %}
 $ apt-get install librsync-dev libz-dev libssl-dev uthash-dev \
   libyajl-dev libncurses5-dev librsync1 make g++ dh-make fakeroot \
-  dh-autoreconf libtinfo-dev libattr1-dev libacl1-dev
+  dh-autoreconf libtinfo-dev libattr1-dev libacl1-dev pkg-config
 {% endhighlight %}
 
 - dh-make - This package is for building a Burp Debian package
@@ -79,9 +89,10 @@ $ apt-get install librsync-dev libz-dev libssl-dev uthash-dev \
 
 Follow the dh-make instructions in [How To Build a Package from Source the Smart Way](http://forums.debian.net/viewtopic.php?t=38976).
 
-1. ``wget http://download.sourceforge.net/project/burp/burp-1.4.40/burp-1.4.40.tar.bz2``
+1. ``wget http://download.sourceforge.net/project/burp/burp-1.4.40/burp-1.4.40.tar.bz2``.
 1. Extract the file into a directory, as per the link above.
 1. Rename the source file ``mv burp-1.4.40.tar.bz2 burp-1.4.40.orig.tar.bz2``
-1. Delete the format file:  ``rm debian/source/format``
+1. Change into the directory extracted from the downloaded files.
+1. Delete the format file:  ``rm debian/source/format``.
 1. Update the Debian change log ``debian/changelog``.  I just search for examples online.  One day I will write a script extract the log from the Burp change log.
 1. Run the Debian build: ``dpkg-buildpakcage -sa -j3 -us -uc``
